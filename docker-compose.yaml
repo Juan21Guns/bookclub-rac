@@ -1,5 +1,14 @@
+version: '2.17.3'
 services:
-  web:
-    build: .
+  backend:
+    image: backend-test
+    restart: always
     ports:
-      - "8000:5000"
+      - '80:80'
+  frontend:
+    image: frontend-changed
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
