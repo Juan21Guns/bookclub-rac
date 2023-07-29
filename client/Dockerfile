@@ -6,9 +6,9 @@ COPY package.json ./
 COPY package-lock.json ./
 
 RUN npm install
+RUN npm install axios -g --silent
+RUN npm install react-scripts
 
-RUN npm install react-scripts -g --silent
-
-COPY . ./
+COPY . .
 
 CMD ["npm", "start"]
